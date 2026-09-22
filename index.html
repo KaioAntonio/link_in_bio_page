@@ -1,70 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <title>Kaio Antônio - Links</title>
+    <title>Kaioozy — Software Engineer // Builder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kaio Rodrigues (@kaioozy) — engenheiro de software construindo seus próprios projetos. Veja o código e a carreira." />
+    <meta name="theme-color" content="#030506" />
+    <meta property="og:title" content="Kaioozy — Software Engineer // Builder" />
+    <meta property="og:description" content="Turning ideas into real projects. Better code, bigger dreams." />
+    <meta property="og:image" content="./images/profile.jpg" />
+    <meta property="og:type" content="profile" />
+    <link rel="icon" href="./images/profile.jpg" />
+    <link rel="preload" href="./images/profile.jpg" as="image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    />
     <link rel="stylesheet" href="./index.css" />
-    <link rel="preload" href="./images/bg01.jpg" as="image" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
-    <script>
-      window.addEventListener("DOMContentLoaded", () => {
-        VANTA.BIRDS({
-          el: "#vanta",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: true,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          backgroundAlpha: 0.0,
-          color2: 0xff00f0,
-          wingSpan: 40.0,
-          separation: 100.0,
-          alignment: 77.0,
-          cohesion: 5.0,
-          quantity: 1.0,
-        });
-
-        setTimeout(() => {
-          const main = document.querySelector("main");
-          main.style.opacity = 1;
-          main.style.filter = "blur(0px)";
-        }, 1000);
-      });
-    </script>
   </head>
   <body>
-    <div id="vanta"></div>
-    <main class="animated">
-      <header>
-        <img src="./images/kaio.png" />
-        <h1>@kaioozy</h1>
-      </header>
-      <ul>
-        <li>
-          <a href="">
-            <img src="./images/homepage.svg" alt="Homepage" width="20" />
-            Official Website
+    <nav class="topbar">
+      <span class="topbar__prompt">
+        <span class="accent">kaioozy</span><span class="muted">@world:~</span>
+      </span>
+      <div class="topbar__right">
+        <span class="topbar__nav">DREAM / PLAN / BUILD</span>
+        <span class="cursor cursor--bar" aria-hidden="true"></span>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero__avatar">
+        <img src="./images/profile.jpg" alt="Foto de Kaio Rodrigues" />
+        <span class="hero__status" aria-hidden="true"></span>
+      </div>
+
+      <p class="hero__kicker">Building the life I want</p>
+      <h1 class="hero__title">KAIOOZY</h1>
+      <p class="hero__name">Kaio Rodrigues</p>
+      <p class="hero__role">Software Engineer // Builder</p>
+      <p class="hero__tagline">
+        Transformando ideias em projetos reais.<br />
+        Código melhor, sonhos maiores.
+      </p>
+
+      <div class="hero__meta">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"></path>
+          <circle cx="12" cy="10" r="2.5"></circle>
+        </svg>
+        <span>Brasil</span>
+      </div>
+
+      <p class="hero__cta">
+        <span class="accent">&gt;</span>
+        <span>build_2026.exe</span>
+        <span class="cursor" aria-hidden="true"></span>
+      </p>
+    </header>
+
+    <main>
+      <section class="panel panel--tight" aria-labelledby="timeline-title">
+        <div class="panel__header">
+          <h2 id="timeline-title" class="panel__title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"></circle></svg>
+            Timeline
+          </h2>
+          <p class="panel__caption">The journey so far</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__marker" aria-hidden="true"></span>
+            <div class="timeline__content">
+              <span class="timeline__year">2020</span>
+              <span class="timeline__label">First Big Project</span>
+              <span class="timeline__desc">From student to professional.</span>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__marker" aria-hidden="true"></span>
+            <div class="timeline__content">
+              <span class="timeline__year">2021</span>
+              <span class="timeline__label">Backend / Cloud</span>
+              <span class="timeline__desc">Java, Spring Boot,<br />AWS, Kubernetes.</span>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__marker" aria-hidden="true"></span>
+            <div class="timeline__content">
+              <span class="timeline__year">2025</span>
+              <span class="timeline__label">International Work</span>
+              <span class="timeline__desc">Senior Software Engineer,<br />The Access Group (UK).</span>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__marker" aria-hidden="true"></span>
+            <div class="timeline__content">
+              <span class="timeline__year">2026</span>
+              <span class="timeline__label">Building My Own Things</span>
+              <span class="timeline__desc">Financial freedom.<br />Long term vision.</span>
+            </div>
+          </li>
+          <li class="timeline__item timeline__item--next">
+            <span class="timeline__marker timeline__marker--next" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#030506" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"></path></svg>
+            </span>
+            <div class="timeline__content">
+              <span class="timeline__label">Next</span>
+              <span class="timeline__progress"><span style="width: 60%;"></span></span>
+              <span class="timeline__desc">More to come...</span>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="panel" aria-labelledby="builds-title">
+        <div class="panel__header">
+          <h2 id="builds-title" class="panel__title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"></path><path d="M3 7l9 5 9-5"></path><path d="M12 12v10"></path></svg>
+            Current Builds
+          </h2>
+          <p class="panel__caption">Ideas &#8594; Projects &#8594; Results</p>
+        </div>
+
+        <div class="cards">
+          <a class="card card--green" href="https://customorarsozinho.com.br" target="_blank" rel="noopener noreferrer">
+            <div class="card__media">
+              <img src="./images/morar-sozinho.png" alt="Captura de tela do site Custo Morar Sozinho" loading="lazy" />
+              <div class="card__media-overlay">
+                <span class="card__icon">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+                </span>
+                <span class="card__title">Morar Sozinho</span>
+              </div>
+            </div>
+            <div class="card__body">
+              <p class="card__subtitle">Meu projeto de vida.</p>
+              <p class="card__desc">Site, calculadora e ferramentas<br />para quem quer morar sozinho<br />sem quebrar as finanças.</p>
+              <div class="card__footer">
+                <span class="badge">Finance &amp; Web</span>
+                <span class="card__arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="9 5 19 5 19 15"></polyline></svg>
+                </span>
+              </div>
+            </div>
           </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/kaio-antonio/"
-          >
-            <img src="./images/linkedin.svg" alt="YouTube" width="20" />
-            LinkedIn
+
+          <a class="card card--purple" href="https://www.linkedin.com/in/kaio-antonio/" target="_blank" rel="noopener noreferrer">
+            <div class="card__media">
+              <svg class="card__graphic" viewBox="0 0 400 160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Ilustração de conexão remota entre Brasil e Londres">
+                <rect x="0" y="0" width="400" height="160" fill="#0c0a14"></rect>
+                <line x1="0" y1="40" x2="400" y2="40" stroke="rgba(255,255,255,0.05)"></line>
+                <line x1="0" y1="80" x2="400" y2="80" stroke="rgba(255,255,255,0.05)"></line>
+                <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(255,255,255,0.05)"></line>
+                <line x1="100" y1="0" x2="100" y2="160" stroke="rgba(255,255,255,0.05)"></line>
+                <line x1="200" y1="0" x2="200" y2="160" stroke="rgba(255,255,255,0.05)"></line>
+                <line x1="300" y1="0" x2="300" y2="160" stroke="rgba(255,255,255,0.05)"></line>
+                <text x="16" y="22" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="0.08em" fill="#4B535A">REMOTE // BR &#8646; UK</text>
+                <path d="M96,72 Q200,8 304,64" fill="none" stroke="#A66CFF" stroke-width="1.5" stroke-dasharray="4 5" opacity="0.7"></path>
+                <circle cx="80" cy="58" r="18" fill="none" stroke="#39FF88" stroke-opacity="0.35" stroke-width="1.5"></circle>
+                <circle cx="80" cy="58" r="6" fill="#39FF88"></circle>
+                <text x="80" y="90" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="0.06em" fill="#8A939B">BRAZIL</text>
+                <circle cx="320" cy="52" r="18" fill="none" stroke="#A66CFF" stroke-opacity="0.35" stroke-width="1.5"></circle>
+                <circle cx="320" cy="52" r="6" fill="#A66CFF"></circle>
+                <text x="320" y="84" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="0.06em" fill="#8A939B">LONDON, UK</text>
+              </svg>
+              <div class="card__media-overlay">
+                <span class="card__icon">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c4 0 4 18 0 18"></path></svg>
+                </span>
+                <span class="card__title">Trabalho Internacional</span>
+              </div>
+            </div>
+            <div class="card__body">
+              <p class="card__subtitle">Senior Software Engineer</p>
+              <p class="card__desc">The Access Group · remoto<br />Londres, UK · desde set/2025<br />Java/Spring Boot na AWS, em escala global.</p>
+              <div class="card__footer">
+                <span class="badge">International</span>
+                <span class="card__arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="9 5 19 5 19 15"></polyline></svg>
+                </span>
+              </div>
+            </div>
           </a>
-        </li>
-        <li>
-          <a href="https://github.com/KaioAntonio">
-            <img src="./images/github.svg" alt="GitHub" width="20" />
-            GitHub
+
+          <a class="card card--blue" href="https://github.com/KaioAntonio" target="_blank" rel="noopener noreferrer">
+            <div class="card__media">
+              <img src="https://github.com/KaioAntonio.png" alt="Foto de perfil do GitHub de Kaio" loading="lazy" />
+              <div class="card__media-overlay">
+                <span class="card__icon">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.79-.25.79-.55 0-.27-.01-1.15-.02-2.09-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.16.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.95.1-.75.4-1.25.73-1.53-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .3.21.66.8.55C20.71 21.39 24 17.08 24 12c0-6.35-5.15-11.5-12-11.5z"></path></svg>
+                </span>
+                <span class="card__title">Open Source</span>
+              </div>
+            </div>
+            <div class="card__body">
+              <p class="card__subtitle">Contribuindo com a comunidade.</p>
+              <p class="card__desc">Projetos que ajudam outros<br />desenvolvedores e fortalecem<br />o ecossistema.</p>
+              <div class="card__footer">
+                <span class="badge">Community</span>
+                <span class="card__arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="9 5 19 5 19 15"></polyline></svg>
+                </span>
+              </div>
+            </div>
           </a>
-        </li>
-      </ul>
+        </div>
+      </section>
+
+      <section class="panel panel--tight" aria-labelledby="connect-title">
+        <div class="panel__header">
+          <h2 id="connect-title" class="panel__title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7 7l3-3a5 5 0 0 0-7-7"></path><path d="M14 11a5 5 0 0 0-7-7l-3 3a5 5 0 0 0 7 7"></path></svg>
+            Connect
+          </h2>
+          <p class="panel__caption panel__caption--text">Let's build something great together.</p>
+        </div>
+
+        <div class="connect">
+          <a class="connect__row" href="https://github.com/KaioAntonio" target="_blank" rel="noopener noreferrer">
+            <span class="connect__icon connect__icon--github">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.79-.25.79-.55 0-.27-.01-1.15-.02-2.09-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.16.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.95.1-.75.4-1.25.73-1.53-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .3.21.66.8.55C20.71 21.39 24 17.08 24 12c0-6.35-5.15-11.5-12-11.5z"></path></svg>
+            </span>
+            <span class="connect__text">
+              <span class="connect__title">GitHub</span>
+              <span class="connect__subtitle">My code</span>
+            </span>
+            <svg class="connect__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="9 5 19 5 19 15"></polyline></svg>
+          </a>
+
+          <a class="connect__row" href="https://www.linkedin.com/in/kaio-antonio/" target="_blank" rel="noopener noreferrer">
+            <span class="connect__icon connect__icon--linkedin">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1s2.5 1.12 2.5 2.5zM.5 8h4V23h-4V8zm7.5 0h3.83v2.05h.05c.53-1 1.83-2.05 3.77-2.05C19.9 8 21.5 10.13 21.5 14.03V23h-4v-8.07c0-1.92-.03-4.4-2.68-4.4-2.68 0-3.09 2.09-3.09 4.26V23h-4V8z"></path></svg>
+            </span>
+            <span class="connect__text">
+              <span class="connect__title">LinkedIn</span>
+              <span class="connect__subtitle">My career</span>
+            </span>
+            <svg class="connect__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="9 5 19 5 19 15"></polyline></svg>
+          </a>
+        </div>
+      </section>
     </main>
+
+    <footer class="footer">
+      <span class="footer__brand">
+        <svg width="16" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h4l2-5 4 10 3-8 2 3h7"></path></svg>
+        KAIOOZY // BUILD 2026
+      </span>
+      <span class="footer__status">
+        BRAZIL &#8594; WORLD
+        <span class="dot" aria-hidden="true"></span>
+      </span>
+    </footer>
   </body>
 </html>
