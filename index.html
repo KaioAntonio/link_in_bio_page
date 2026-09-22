@@ -22,47 +22,52 @@
   </head>
   <body>
     <nav class="topbar">
-      <span class="topbar__prompt">
-        <span class="accent">kaioozy</span><span class="muted">@world:~</span>
-      </span>
-      <div class="topbar__right">
-        <span class="topbar__nav">DREAM / PLAN / BUILD</span>
-        <span class="cursor cursor--bar" aria-hidden="true"></span>
+      <div class="shell topbar__shell">
+        <span class="topbar__prompt">
+          <span class="accent">kaioozy</span><span class="muted">@world:~</span>
+        </span>
+        <div class="topbar__right">
+          <span class="topbar__nav">DREAM / PLAN / BUILD</span>
+          <span class="cursor cursor--bar" aria-hidden="true"></span>
+        </div>
       </div>
     </nav>
 
     <header class="hero">
-      <div class="hero__avatar">
-        <img src="./images/profile.jpg" alt="Foto de Kaio Rodrigues" />
-        <span class="hero__status" aria-hidden="true"></span>
+      <div class="shell hero__shell">
+        <div class="hero__avatar">
+          <img src="./images/profile.jpg" alt="Foto de Kaio Rodrigues" />
+          <span class="hero__status" aria-hidden="true"></span>
+        </div>
+
+        <p class="hero__kicker">Building the life I want</p>
+        <h1 class="hero__title">KAIOOZY</h1>
+        <p class="hero__name">Kaio Rodrigues</p>
+        <p class="hero__role">Software Engineer // Builder</p>
+        <p class="hero__tagline">
+          Transformando ideias em projetos reais.<br />
+          Código melhor, sonhos maiores.
+        </p>
+
+        <div class="hero__meta">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"></path>
+            <circle cx="12" cy="10" r="2.5"></circle>
+          </svg>
+          <span>Brasil</span>
+        </div>
+
+        <p class="hero__cta">
+          <span class="accent">&gt;</span>
+          <span>build_2026.exe</span>
+          <span class="cursor" aria-hidden="true"></span>
+        </p>
       </div>
-
-      <p class="hero__kicker">Building the life I want</p>
-      <h1 class="hero__title">KAIOOZY</h1>
-      <p class="hero__name">Kaio Rodrigues</p>
-      <p class="hero__role">Software Engineer // Builder</p>
-      <p class="hero__tagline">
-        Transformando ideias em projetos reais.<br />
-        Código melhor, sonhos maiores.
-      </p>
-
-      <div class="hero__meta">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"></path>
-          <circle cx="12" cy="10" r="2.5"></circle>
-        </svg>
-        <span>Brasil</span>
-      </div>
-
-      <p class="hero__cta">
-        <span class="accent">&gt;</span>
-        <span>build_2026.exe</span>
-        <span class="cursor" aria-hidden="true"></span>
-      </p>
     </header>
 
     <main>
       <section class="panel panel--tight" aria-labelledby="timeline-title">
+        <div class="shell panel__shell">
         <div class="panel__header">
           <h2 id="timeline-title" class="panel__title">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"></circle></svg>
@@ -115,9 +120,11 @@
             </div>
           </li>
         </ol>
+        </div>
       </section>
 
       <section class="panel" aria-labelledby="builds-title">
+        <div class="shell panel__shell">
         <div class="panel__header">
           <h2 id="builds-title" class="panel__title">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"></path><path d="M3 7l9 5 9-5"></path><path d="M12 12v10"></path></svg>
@@ -209,9 +216,11 @@
             </div>
           </a>
         </div>
+        </div>
       </section>
 
       <section class="panel panel--tight" aria-labelledby="connect-title">
+        <div class="shell panel__shell">
         <div class="panel__header">
           <h2 id="connect-title" class="panel__title">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7 7l3-3a5 5 0 0 0-7-7"></path><path d="M14 11a5 5 0 0 0-7-7l-3 3a5 5 0 0 0 7 7"></path></svg>
@@ -243,18 +252,21 @@
             <svg class="connect__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="9 5 19 5 19 15"></polyline></svg>
           </a>
         </div>
+        </div>
       </section>
     </main>
 
     <footer class="footer">
-      <span class="footer__brand">
-        <svg width="16" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h4l2-5 4 10 3-8 2 3h7"></path></svg>
-        KAIOOZY // BUILD 2026
-      </span>
-      <span class="footer__status">
-        BRAZIL &#8594; WORLD
-        <span class="dot" aria-hidden="true"></span>
-      </span>
+      <div class="shell footer__shell">
+        <span class="footer__brand">
+          <svg width="16" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h4l2-5 4 10 3-8 2 3h7"></path></svg>
+          KAIOOZY // BUILD 2026
+        </span>
+        <span class="footer__status">
+          BRAZIL &#8594; WORLD
+          <span class="dot" aria-hidden="true"></span>
+        </span>
+      </div>
     </footer>
   </body>
 </html>
