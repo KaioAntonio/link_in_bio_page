@@ -295,6 +295,20 @@
         </button>
         <p id="chatFormHint" class="chat-form__hint" role="status"></p>
       </form>
+
+      <div id="chatFeedback" class="chat-feedback" role="status" aria-live="polite" hidden>
+        <div class="chat-feedback__stage">
+          <img id="chatSprite" class="chat-feedback__sprite" src="./images/sprite/reading.png" alt="" width="72" height="126" />
+          <svg class="chat-feedback__plane" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 4 3 11l6.5 2.5L12 20l3-6.5L21 4z"></path>
+          </svg>
+          <svg class="chat-feedback__badge" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 12.5l2.5 2.5L16 9"></path>
+          </svg>
+        </div>
+        <p id="chatFeedbackText" class="chat-feedback__text">Enviando...</p>
+      </div>
     </div>
 
     <script type="module" src="./chat.js"></script>
