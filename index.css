@@ -130,43 +130,211 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
 .hero__shell {
-  padding: 48px 24px 40px;
+  position: relative;
+  z-index: 2;
+  margin-top: -84px;
+  padding: 0 24px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.hero__avatar {
-  position: relative;
-  width: 104px;
-  height: 104px;
-  border-radius: 50%;
-  border: 1.5px solid var(--green);
-  box-shadow: 0 0 24px rgba(57, 255, 136, 0.22);
-  overflow: hidden;
-  margin-bottom: 20px;
-  animation: fadeUp 0.7s ease both;
+.hero__intro,
+.hero__about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.hero__avatar img {
+/* Face hologram (voxels rendered by face.js) */
+
+.face-stage {
+  position: relative;
+  height: clamp(440px, 74vh, 620px);
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 42%, rgba(57, 255, 136, 0.07), transparent 70%),
+    var(--bg);
+  isolation: isolate;
+}
+
+.face-stage__canvas {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 
-.hero__status {
+.face-stage.is-ready .face-stage__canvas {
+  opacity: 1;
+}
+
+.face-stage.is-glitch .face-stage__canvas {
+  filter: drop-shadow(3px 0 rgba(255, 40, 110, 0.6)) drop-shadow(-3px 0 rgba(77, 163, 255, 0.6));
+  transform: translateX(2px) skewX(-0.6deg);
+}
+
+/* scanlines + vignette */
+.face-stage::before,
+.face-stage::after {
+  content: "";
   position: absolute;
-  bottom: 4px;
-  right: 4px;
-  width: 16px;
-  height: 16px;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.face-stage::before {
+  animation: crtFlicker 5s steps(1) infinite;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(0, 0, 0, 0.32) 2px,
+    rgba(0, 0, 0, 0.32) 3px
+  );
+}
+
+.face-stage::after {
+  background:
+    radial-gradient(ellipse 85% 75% at 50% 45%, transparent 55%, rgba(3, 5, 6, 0.85) 100%),
+    linear-gradient(to bottom, transparent 62%, var(--bg) 96%);
+}
+
+/* slow bright bar rolling down, like an old CRT refresh */
+.face-stage__roll {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 18%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, rgba(57, 255, 136, 0.05), transparent);
+  animation: crtRoll 7s linear infinite;
+}
+
+.face-stage__loading {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-2);
+  transition: opacity 0.4s ease;
+}
+
+.face-stage.is-ready .face-stage__loading,
+.face-stage.is-fallback .face-stage__loading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.face-stage__fallback {
+  display: none;
+}
+
+.face-stage.is-fallback .face-stage__fallback {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  width: 156px;
+  height: 156px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1.5px solid var(--green);
+  box-shadow: 0 0 32px rgba(57, 255, 136, 0.25);
+  object-fit: cover;
+  filter: grayscale(0.2);
+}
+
+.face-stage.is-fallback .face-stage__hud {
+  display: none;
+}
+
+.face-stage__hud {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.face-stage__hud-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.face-stage__hud-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.face-stage__rec {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--green);
-  border: 3px solid var(--bg);
+  box-shadow: 0 0 8px var(--green);
+  animation: blink 1.4s step-start infinite;
 }
+
+@keyframes crtRoll {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(560%);
+  }
+}
+
+@keyframes crtFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  41% {
+    opacity: 0.45;
+  }
+  42% {
+    opacity: 1;
+  }
+  77% {
+    opacity: 0.7;
+  }
+  78% {
+    opacity: 1;
+  }
+}
+
 
 .hero__kicker {
   font-family: var(--font-mono);
@@ -715,8 +883,8 @@ a {
     --max-width: 700px;
   }
 
-  .hero__shell {
-    padding: 64px 24px 48px;
+  .face-stage {
+    height: clamp(520px, 80vh, 760px);
   }
 
   .card__desc br {
@@ -727,6 +895,55 @@ a {
 @media (min-width: 1200px) {
   :root {
     --max-width: 820px;
+  }
+}
+
+/* Wide screens: name on the left, about on the right, face in between */
+@media (min-width: 1080px) {
+  .face-stage {
+    height: clamp(560px, 86vh, 820px);
+  }
+
+  .face-stage__hud {
+    top: 24px;
+    left: 32px;
+    right: 32px;
+  }
+
+  .hero__shell {
+    position: absolute;
+    inset: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 48px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    pointer-events: none;
+  }
+
+  .hero__shell > * {
+    pointer-events: auto;
+  }
+
+  .hero__intro {
+    align-items: flex-start;
+    max-width: 340px;
+  }
+
+  .hero__about {
+    align-items: flex-start;
+    max-width: 280px;
+  }
+
+  .hero__title {
+    font-size: 48px;
+    text-shadow: 0 0 24px rgba(3, 5, 6, 0.9);
+  }
+
+  .hero__tagline {
+    max-width: none;
   }
 }
 
@@ -1031,7 +1248,9 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   .cursor,
-  .hero__avatar,
+  .face-stage::before,
+  .face-stage__roll,
+  .face-stage__rec,
   .hero__kicker,
   .hero__title,
   .hero__name,

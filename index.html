@@ -11,7 +11,8 @@
     <meta property="og:image" content="./images/profile.jpg" />
     <meta property="og:type" content="profile" />
     <link rel="icon" href="./images/profile.jpg" />
-    <link rel="preload" href="./images/profile.jpg" as="image" />
+    <link rel="preload" href="./images/face-voxels.png" as="image" />
+    <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,34 +35,52 @@
     </nav>
 
     <header class="hero">
+      <div id="faceStage" class="face-stage">
+        <img class="face-stage__fallback" src="./images/profile.jpg" alt="Foto de Kaio Rodrigues" />
+        <canvas id="faceCanvas" class="face-stage__canvas" role="img" aria-label="Rosto de Kaio Rodrigues em voxels verdes, estilo holograma"></canvas>
+        <span class="face-stage__roll" aria-hidden="true"></span>
+        <p class="face-stage__loading" aria-hidden="true">
+          <span class="accent">&gt;</span> rendering kaio.vox<span class="cursor"></span>
+        </p>
+        <div class="face-stage__hud" aria-hidden="true">
+          <span class="face-stage__hud-left">
+            <span class="face-stage__rec"></span>LIVE // KAIO.VOX
+          </span>
+          <span class="face-stage__hud-right">
+            <span id="faceHudCount">-- VOXELS</span>
+            <span id="faceHudRot">ROT X+00.0 Y+00.0</span>
+          </span>
+        </div>
+      </div>
+
       <div class="shell hero__shell">
-        <div class="hero__avatar">
-          <img src="./images/profile.jpg" alt="Foto de Kaio Rodrigues" />
-          <span class="hero__status" aria-hidden="true"></span>
+        <div class="hero__intro">
+          <p class="hero__kicker">Building the life I want</p>
+          <h1 class="hero__title">Kaio Rodrigues</h1>
+          <p class="hero__name">@kaioozy</p>
+          <p class="hero__role">Software Engineer // Builder</p>
         </div>
 
-        <p class="hero__kicker">Building the life I want</p>
-        <h1 class="hero__title">Kaio Rodrigues</h1>
-        <p class="hero__name">@kaioozy</p>
-        <p class="hero__role">Software Engineer // Builder</p>
-        <p class="hero__tagline">
-          Transformando ideias em projetos reais.<br />
-          Código melhor, sonhos maiores.
-        </p>
+        <div class="hero__about">
+          <p class="hero__tagline">
+            Transformando ideias em projetos reais.<br />
+            Código melhor, sonhos maiores.
+          </p>
 
-        <div class="hero__meta">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"></path>
-            <circle cx="12" cy="10" r="2.5"></circle>
-          </svg>
-          <span>Brasil</span>
+          <div class="hero__meta">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"></path>
+              <circle cx="12" cy="10" r="2.5"></circle>
+            </svg>
+            <span>Brasil</span>
+          </div>
+
+          <p class="hero__cta">
+            <span class="accent">&gt;</span>
+            <span>build_2026.exe</span>
+            <span class="cursor" aria-hidden="true"></span>
+          </p>
         </div>
-
-        <p class="hero__cta">
-          <span class="accent">&gt;</span>
-          <span>build_2026.exe</span>
-          <span class="cursor" aria-hidden="true"></span>
-        </p>
       </div>
     </header>
 
@@ -311,6 +330,7 @@
       </div>
     </div>
 
+    <script type="module" src="./face.js"></script>
     <script type="module" src="./chat.js"></script>
   </body>
 </html>
